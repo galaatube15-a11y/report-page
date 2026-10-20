@@ -1,0 +1,138 @@
+[10/19/2026 6:59 AM] Galaa Hundasaa: <!DOCTYPE html>
+<html lang="om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lideta code enforcement - Report Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <div class="logo">A</div>
+            <div>
+                <h2>Lideta code enforcement</h2>
+                <p>Code Enforcement Report System</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#report">Register Report</a>
+            <a href="#track">Track Report</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <p class="eyebrow">Digital Community Services
+
+
+</p>
+            <h1>Report the problems in your area to us</h1>
+            <p>
+                Report sanitation issues, construction-related problems, and regulatory violations. Track your reports.
+            </p>
+            <a class="primary-button" href="#report">
+                Enter new report
+            </a>
+        </section>
+
+        <section id="dashboard" class="section">
+            <h2>Dashboard</h2>
+            <div id="dashboard-cards" class="dashboard-grid">
+                <article class="stat-card">
+                    <h3>All reports</h3>
+                    <p id="totalReports">0</p>
+                </article>
+
+                <article class="stat-card">
+                    <h3>New reports</h3>
+                    <p id="newReports">0</p>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Reports in Progress</h3>
+                    <p id="progressReports">0</p>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Completed Reports</h3>
+                    <p id="completedReports">0</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="report" class="section">
+            <h2>Enter new report</h2>
+            <p>Please report to us all the problems you have identified in your area</p>
+
+            <form id="reportForm">
+                <label for="reporterName">Report name (optional)</label>
+                <input id="reporterName" type="text"
+                       placeholder="Your name">
+
+                <label for="category">Illegal types</label>
+                <select id="category" required>
+                    <option value="">Choose a category</option>
+                    <option>Environmental Cleanliness</option>
+                    <option>Illegal Construction</option>
+                    <option>Regulatory Violations</option>
+                    <option>Public Safety Issues</option>
+                    <option>Other</option>
+                </select>
+                <label>Choose the location of the problem</label>
+
+<div id="map"></div>
+
+<p id="mapMessage">
+    Tap on the map to mark the location where the problem occurred.
+</p>
+
+<input type="hidden" id="latitude">
+<input type="hidden" id="longitude">
+
+                <label for="location">Location of illegal activity</label>
+                <input id="location" type="text"
+                       placeholder="Kebele, Woreda ykn knowm place"
+                       required>
+
+                <label for="description">Illegal descriptions</label>
+                <textarea id="description" rows="5"
+                          placeholder="Describe the illegal activity..."
+                          required></textarea>
+
+                <label for="evidence">photo file (if exists)</label>
+                <input id="evidence" type="file"
+                       accept="image/*">
+
+                <button type="submit">Send report</button>
+                <p id="reportMessage" role="status"></p>
+            </form>
+        </section>
+
+        <section id="track" class="section">
+            <h2>Track Report</h2>
+            <form id="searchForm">
+                <label for="searchId">Report ID</label>
+                <input id="searchId" type="text"
+                       placeholder="For example: AAC-123456"
+                       required>
+                <button type="submit"><search></search></button>
+            </form>
+            <div id="searchResult"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AACACEA | Code Enforcement Report Management System</p>
+    </footer>
+
+</body>
+</html>
